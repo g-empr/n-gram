@@ -1,0 +1,19 @@
+{
+  "name": "n-gram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-empr/n-gram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g-empr/n-gram/issues"
+  },
+  "homepage": "https://github.com/g-empr/n-gram#readme"
+}
