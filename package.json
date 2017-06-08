@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/g-empr/n-gram/issues"
   },
-  "homepage": "https://github.com/g-empr/n-gram#readme"
+  "homepage": "https://github.com/g-empr/n-gram#readme",
+  "dependencies": {
+    "kuromoji": "^0.1.1"
+  }
 }
