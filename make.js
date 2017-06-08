@@ -1,12 +1,12 @@
 var fs = require('fs');
 
-// kuromoji 周りの設定とか
+// kuromoji 設定
 var kuromoji = require('kuromoji');
 var builder = kuromoji.builder({
   dicPath: 'node_modules/kuromoji/dict'
 });
 
-// マルコフ連鎖の実装
+// マルコフ連鎖
 class Markov {
   constructor(n) {
     this.data = {};
@@ -52,7 +52,7 @@ var markov = new Markov();
 builder.build(function(err, tokenizer) {
   if(err) { throw err; }
 
-  // アシタカ先輩の台詞を読み込む
+  // txtを読み込む
   fs.readFile('list.txt', 'utf8', function(err, data) {
     if(err) { throw err; }
 
@@ -60,16 +60,16 @@ builder.build(function(err, tokenizer) {
     lines.forEach(function(line) {
       var tokens = tokenizer.tokenize(line);
 
-      // トークンを文中表記にすべて変換
+      // トークンを文中表記に変換
       var words = tokens.map(function(token) {
         return token.surface_form;
       });
 
-      // データを登録
+      // データ登録
       markov.add(words);
     });
 
-    // 10回くらい生成してみる
+    // 10回生成
     for(var n = 0; n < 10; n++) {
       console.log(markov.make());
     }
